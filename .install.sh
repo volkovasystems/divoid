@@ -1,7 +1,9 @@
 yarn add \
 babel-runtime \
+falzy \
 kein \
 mrkd \
+protype \
 --save && \
 yarn add \
 babel-cli \
@@ -12,7 +14,9 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+falzy \
 kein \
 mrkd \
+protype \
 --save \
 --force-latest

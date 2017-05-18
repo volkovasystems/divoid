@@ -47,14 +47,18 @@
 
 	@include:
 		{
+			"falzy": "falzy",
 			"kein": "kein",
-			"mrkd": "mrkd"
+			"mrkd": "mrkd",
+			"protype": "protype"
 		}
 	@end-include
 */
 
+const falzy = require( "falzy" );
 const kein = require( "kein" );
 const mrkd = require( "mrkd" );
+const protype = require( "protype" );
 
 const CLASS = Symbol.for( "class" );
 const INITIALIZE = Symbol.for( "initialize" );
@@ -67,6 +71,10 @@ const divoid = function divoid( blueprint ){
 			}
 		@end-meta-configuration
 	*/
+
+	if( falzy( blueprint ) || !protype( blueprint, FUNCTION ) ){
+		throw new Error( "invalid blueprint" );
+	}
 
 	if( mrkd( CLASS, blueprint, true ) && mrkd( "diatomic", blueprint ) &&
 		kein( INITIALIZE, blueprint ) && mrkd( "symbiosis", blueprint.prototype.initialize ) )
