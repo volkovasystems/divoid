@@ -1,0 +1,29 @@
+{
+  "name": "divoid",
+  "version": "0.0.0",
+  "description": "Revert symbiotic initialization.",
+  "main": "divoid.deploy.js",
+  "support": "divoid.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "revert",
+    "symbiotic",
+    "initialization",
+    "divoid"
+  ],
+  "homepage": "https://github.com/volkovasystems/divoid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kein": "^0.25.0",
+    "mrkd": "^0.4.0"
+  }
+}
