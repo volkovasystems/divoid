@@ -1,0 +1,2 @@
+# divoid
+Revert symbiotic initialization.
