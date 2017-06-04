@@ -35,6 +35,9 @@
               			"module": "divoid",
               			"author": "Richeve S. Bebedor",
               			"eMail": "richeve.bebedor@gmail.com",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+              			],
               			"repository": "https://github.com/volkovasystems/divoid.git",
               			"test": "divoid-test.js",
               			"global": true
