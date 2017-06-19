@@ -1,8 +1,46 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./divoid.deploy.js">
-		</script>
+		<title>divoid unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./divoid.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "divoid unit test", function( assert ) {
+
+				assert.ok( divoid( function Test( ){ } ) );
+
+				const CLASS = Symbol.for( "class" );
+				const DIATOMIC = Symbol( "diatomic" );
+				const INITIALIZE = Symbol.for( "initialize" );
+				const SYMBIOSIS = Symbol( "symbiosis" );
+
+				let Test = function Test( ){ };
+				Test[ CLASS ] = CLASS;
+				Test[ DIATOMIC ] = DIATOMIC;
+				Test[ INITIALIZE ] = function initialize( ){
+					return "test";
+				}
+				Test.prototype.initialize = function initialize( ){
+					return "hello world";
+				}
+				Test.prototype.initialize[ SYMBIOSIS ] = SYMBIOSIS;
+
+				assert.ok( divoid( Test ) );
+
+				assert.equal( ( new Test( ) ).initialize( ), "test", "should be equal" );
+
+			} );
+		</script>
+	</body>
 </html>
