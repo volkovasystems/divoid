@@ -3,7 +3,6 @@ babel-runtime \
 falzy \
 kein \
 mrkd \
-protype \
 --save && \
 yarn add \
 babel-cli \
@@ -17,6 +16,5 @@ bower install \
 falzy \
 kein \
 mrkd \
-protype \
 --save \
 --force-latest

@@ -1,6 +1,6 @@
 {
   "name": "divoid",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Revert symbiotic initialization.",
   "main": "divoid.deploy.js",
   "support": "divoid.support.js",
@@ -26,8 +26,7 @@
   ],
   "dependencies": {
     "falzy": "^0.20.0",
-    "kein": "^0.26.0",
-    "mrkd": "^0.8.0",
-    "protype": "^0.22.0"
+    "kein": "^0.28.0",
+    "mrkd": "^0.9.0"
   }
 }

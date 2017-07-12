@@ -53,8 +53,7 @@
               		{
               			"falzy": "falzy",
               			"kein": "kein",
-              			"mrkd": "mrkd",
-              			"protype": "protype"
+              			"mrkd": "mrkd"
               		}
               	@end-include
               */var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
@@ -62,7 +61,6 @@
 var falzy = require("falzy");
 var kein = require("kein");
 var mrkd = require("mrkd");
-var protype = require("protype");
 
 var CLASS = (0, _for2.default)("class");
 var INITIALIZE = (0, _for2.default)("initialize");
@@ -76,7 +74,7 @@ var divoid = function divoid(blueprint) {
                                          	@end-meta-configuration
                                          */
 
-	if (falzy(blueprint) || !protype(blueprint, FUNCTION)) {
+	if (falzy(blueprint) || typeof blueprint != "function") {
 		throw new Error("invalid blueprint");
 	}
 

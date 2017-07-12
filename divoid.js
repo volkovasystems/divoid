@@ -53,8 +53,7 @@
 		{
 			"falzy": "falzy",
 			"kein": "kein",
-			"mrkd": "mrkd",
-			"protype": "protype"
+			"mrkd": "mrkd"
 		}
 	@end-include
 */
@@ -62,7 +61,6 @@
 const falzy = require( "falzy" );
 const kein = require( "kein" );
 const mrkd = require( "mrkd" );
-const protype = require( "protype" );
 
 const CLASS = Symbol.for( "class" );
 const INITIALIZE = Symbol.for( "initialize" );
@@ -76,7 +74,7 @@ const divoid = function divoid( blueprint ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( blueprint ) || !protype( blueprint, FUNCTION ) ){
+	if( falzy( blueprint ) || typeof blueprint != "function" ){
 		throw new Error( "invalid blueprint" );
 	}
 
