@@ -1,46 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>divoid unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:divoid</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./divoid.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "divoid unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				assert.ok( divoid( function Test( ){ } ) );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				const CLASS = Symbol.for( "class" );
-				const DIATOMIC = Symbol( "diatomic" );
-				const INITIALIZE = Symbol.for( "initialize" );
-				const SYMBIOSIS = Symbol( "symbiosis" );
-
-				let Test = function Test( ){ };
-				Test[ CLASS ] = CLASS;
-				Test[ DIATOMIC ] = DIATOMIC;
-				Test[ INITIALIZE ] = function initialize( ){
-					return "test";
-				}
-				Test.prototype.initialize = function initialize( ){
-					return "hello world";
-				}
-				Test.prototype.initialize[ SYMBIOSIS ] = SYMBIOSIS;
-
-				assert.ok( divoid( Test ) );
-
-				assert.equal( ( new Test( ) ).initialize( ), "test", "should be equal" );
-
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>
