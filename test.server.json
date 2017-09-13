@@ -1,16 +1,46 @@
 {
-  "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-09-11T20:03:47.278Z",
-    "end": "2017-09-11T20:03:47.278Z",
-    "duration": 0
-  },
-  "tests": [],
-  "pending": [],
-  "failures": [],
-  "passes": []
+	"stats": {
+		"suites": 3,
+		"tests": 2,
+		"passes": 2,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-09-13T04:59:27.590Z",
+		"end": "2017-09-13T04:59:27.601Z",
+		"duration": 11
+	},
+	"tests": [
+		{
+			"title": "should revert symbiotic initialization",
+			"fullTitle": "divoid `divoid with class containing symbiotic initialization` should revert symbiotic initialization",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should not throw error",
+			"fullTitle": "divoid `divoid( function Test( ){ } )` should not throw error",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should revert symbiotic initialization",
+			"fullTitle": "divoid `divoid with class containing symbiotic initialization` should revert symbiotic initialization",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should not throw error",
+			"fullTitle": "divoid `divoid( function Test( ){ } )` should not throw error",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

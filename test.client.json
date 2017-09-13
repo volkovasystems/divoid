@@ -1,0 +1,116 @@
+{
+	"state": {
+		"passed": 2,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-09-13T04:59:28.794Z",
+	"end": "2017-09-13T05:00:15.503Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "divoid",
+			"duration": 0,
+			"start": "2017-09-13T05:00:15.136Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "divoid",
+			"duration": 185,
+			"start": "2017-09-13T05:00:15.137Z",
+			"end": "2017-09-13T05:00:15.322Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-09-13T05:00:15.138Z",
+					"end": "2017-09-13T05:00:15.138Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "divoid",
+					"associatedTest": "should revert symbiotic initialization"
+				},
+				{
+					"start": "2017-09-13T05:00:15.260Z",
+					"end": "2017-09-13T05:00:15.260Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "divoid",
+					"associatedTest": "should revert symbiotic initialization"
+				},
+				{
+					"start": "2017-09-13T05:00:15.262Z",
+					"end": "2017-09-13T05:00:15.262Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "divoid",
+					"associatedTest": "should not throw error"
+				},
+				{
+					"start": "2017-09-13T05:00:15.322Z",
+					"end": "2017-09-13T05:00:15.322Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "divoid",
+					"associatedTest": "should not throw error"
+				},
+				{
+					"start": "2017-09-13T05:00:15.322Z",
+					"end": "2017-09-13T05:00:15.323Z",
+					"duration": 1,
+					"title": "\"after all\" hook",
+					"associatedSuite": "divoid"
+				}
+			]
+		},
+		{
+			"name": "`divoid with class containing symbiotic initialization`",
+			"duration": 125,
+			"start": "2017-09-13T05:00:15.137Z",
+			"end": "2017-09-13T05:00:15.262Z",
+			"tests": [
+				{
+					"name": "should revert symbiotic initialization",
+					"start": "2017-09-13T05:00:15.138Z",
+					"end": "2017-09-13T05:00:15.260Z",
+					"duration": 122,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`divoid( function Test( ){ } )`",
+			"duration": 60,
+			"start": "2017-09-13T05:00:15.262Z",
+			"end": "2017-09-13T05:00:15.322Z",
+			"tests": [
+				{
+					"name": "should not throw error",
+					"start": "2017-09-13T05:00:15.262Z",
+					"end": "2017-09-13T05:00:15.321Z",
+					"duration": 59,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
