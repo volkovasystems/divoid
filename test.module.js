@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"divoid": "divoid"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const divoid = require( "./divoid.js" );
@@ -67,27 +67,139 @@ const path = require( "path" );
 
 
 //: @server:
-
 describe( "divoid", ( ) => {
 
-} );
+	describe( "`divoid with class containing symbiotic initialization`", ( ) => {
+		it( "should revert symbiotic initialization", ( ) => {
+			const CLASS = Symbol.for( "class" );
+			const DIATOMIC = Symbol( "diatomic" );
+			const INITIALIZE = Symbol.for( "initialize" );
+			const SYMBIOSIS = Symbol( "symbiosis" );
 
+			let Test = function Test( ){ };
+			Test[ CLASS ] = CLASS;
+			Test[ DIATOMIC ] = DIATOMIC;
+			Test[ INITIALIZE ] = function initialize( ){
+				return "test";
+			}
+			Test.prototype.initialize = function initialize( ){
+				return "hello world";
+			}
+			Test.prototype.initialize[ SYMBIOSIS ] = SYMBIOSIS;
+
+			divoid( Test );
+
+			assert.equal( Test.prototype.initialize[ SYMBIOSIS ], undefined );
+
+			// assert.equal( ( new Test( ) ).initialize( ), "test" );
+		} );
+	} );
+
+	describe( "`divoid( function Test( ){ } )`", ( ) => {
+		it( "should not throw error", ( ) => {
+			assert.ok( divoid( function Test( ){ } ) );
+		} );
+	} );
+
+} );
 //: @end-server
 
 
 //: @client:
-
 describe( "divoid", ( ) => {
 
-} );
+	describe( "`divoid with class containing symbiotic initialization`", ( ) => {
+		it( "should revert symbiotic initialization", ( ) => {
+			const CLASS = Symbol.for( "class" );
+			const DIATOMIC = Symbol( "diatomic" );
+			const INITIALIZE = Symbol.for( "initialize" );
+			const SYMBIOSIS = Symbol( "symbiosis" );
 
+			let Test = function Test( ){ };
+			Test[ CLASS ] = CLASS;
+			Test[ DIATOMIC ] = DIATOMIC;
+			Test[ INITIALIZE ] = function initialize( ){
+				return "test";
+			}
+			Test.prototype.initialize = function initialize( ){
+				return "hello world";
+			}
+			Test.prototype.initialize[ SYMBIOSIS ] = SYMBIOSIS;
+
+			divoid( Test );
+
+			assert.equal( Test.prototype.initialize[ SYMBIOSIS ], undefined );
+
+			// assert.equal( ( new Test( ) ).initialize( ), "test" );
+		} );
+	} );
+
+	describe( "`divoid( function Test( ){ } )`", ( ) => {
+		it( "should not throw error", ( ) => {
+			assert.ok( divoid( function Test( ){ } ) );
+		} );
+	} );
+
+} );
 //: @end-client
 
 
 //: @bridge:
-
 describe( "divoid", ( ) => {
 
-} );
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
+	describe( "`divoid with class containing symbiotic initialization`", ( ) => {
+		it( "should revert symbiotic initialization", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					const CLASS = Symbol.for( "class" );
+					const DIATOMIC = Symbol( "diatomic" );
+					const INITIALIZE = Symbol.for( "initialize" );
+					const SYMBIOSIS = Symbol( "symbiosis" );
+
+					let Test = function Test( ){ };
+					Test[ CLASS ] = CLASS;
+					Test[ DIATOMIC ] = DIATOMIC;
+					Test[ INITIALIZE ] = function initialize( ){
+						return "test";
+					}
+					Test.prototype.initialize = function initialize( ){
+						return "hello world";
+					}
+					Test.prototype.initialize[ SYMBIOSIS ] = SYMBIOSIS;
+
+					divoid( Test );
+
+					return Test.prototype.initialize[ SYMBIOSIS ];
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, undefined );
+
+			// assert.equal( ( new Test( ) ).initialize( ), "test" );
+		} );
+	} );
+
+	describe( "`divoid( function Test( ){ } )`", ( ) => {
+		it( "should not throw error", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return divoid( function Test( ){ } ).name
+				}
+
+			).value;
+			//: @end-ignore
+			
+			assert.equal( result, "Test" );
+		} );
+	} );
+
+} );
 //: @end-bridge
